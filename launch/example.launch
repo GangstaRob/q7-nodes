@@ -1,0 +1,5 @@
+<launch> 
+  <node pkg="example_pkg" name="example.py" type="example.py" output="screen">
+    
+  </node>
+</launch>

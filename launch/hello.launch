@@ -1,0 +1,9 @@
+<launch>
+  <node 
+     pkg="example_pkg"
+     type="hello"
+     name="hello_launcher"
+     output="screen"
+     ns="sim"
+  />
+</launch>
