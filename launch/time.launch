@@ -1,1 +1,10 @@
 
+<launch>
+  <node 
+     pkg="my_pkg"
+     type="time"
+     name="my_time"
+     output="screen"
+     ns="sim"
+  />
+</launch>
