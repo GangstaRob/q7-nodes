@@ -115,6 +115,7 @@ install(TARGETS hello time
 install(FILES
   launch/example.launch
   launch/hello.launch
+  launch/time.launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
