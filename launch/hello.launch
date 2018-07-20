@@ -1,8 +1,8 @@
 <launch>
   <node 
-     pkg="example_pkg"
-     type="hello"
-     name="hello_launcher"
+     pkg="my_pkg"
+     type="client"
+     name="my_client"
      output="screen"
      ns="sim"
   />
