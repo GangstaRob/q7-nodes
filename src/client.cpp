@@ -157,9 +157,9 @@ void setOut(char pin[]) {
     ofstream myFile;
     string directory;
     if(pin[0] == '0') {
-	directory = "../dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[1]) + "/direction";
+	directory = "/dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[1]) + "/direction";
     } else {
-	directory = "../dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[0]) + string(1,pin[1]) + "/direction";
+	directory = "/dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[0]) + string(1,pin[1]) + "/direction";
     }
     myFile.open(directory.c_str());
     myFile << "out";
@@ -171,9 +171,9 @@ void setIn(char pin[]) {
     ofstream myFile;
     string directory;
     if(pin[0] == '0') {
-	directory = "../dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[1]) + "/direction";
+	directory = "/dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[1]) + "/direction";
     } else {
-	directory = "../dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[0]) + string(1,pin[1]) + "/direction";
+	directory = "/dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[0]) + string(1,pin[1]) + "/direction";
     }
     myFile.open(directory.c_str());
     myFile << "in";
@@ -185,9 +185,9 @@ void setOn(char pin[]) {
     ofstream myFile;
     string directory;
     if(pin[0] == '0') {
-	directory = "../dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[1]) + "/value";
+	directory = "/dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[1]) + "/value";
     } else {
-	directory = "../dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[0]) + string(1,pin[1]) + "/value";
+	directory = "/dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[0]) + string(1,pin[1]) + "/value";
     }
     myFile.open(directory.c_str());
     myFile << 1;
@@ -199,9 +199,9 @@ void setOff(char pin[]) {
     ofstream myFile;
     string directory;
     if(pin[0] == '0') {
-	directory = "../dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[1]) + "/value";
+	directory = "/dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[1]) + "/value";
     } else {
-	directory = "../dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[0]) + string(1,pin[1]) + "/value";
+	directory = "/dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[0]) + string(1,pin[1]) + "/value";
     }
     myFile.open(directory.c_str());
     myFile << 0;
@@ -213,9 +213,9 @@ string readValue(char pin[]) {
     string answer;
     string directory;
     if(pin[0] == '0') {
-	directory = "../dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[1]) + "/value";
+	directory = "/dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[1]) + "/value";
     } else {
-	directory = "../dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[0]) + string(1,pin[1]) + "/value";
+	directory = "/dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[0]) + string(1,pin[1]) + "/value";
     }
     ifstream myFile;
     myFile.open(directory.c_str());
@@ -235,9 +235,9 @@ string readDirection(char pin[]) {
     string answer;
     string directory;
     if(pin[0] == '0') {
-	directory = "../dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[1]) + "/direction";
+	directory = "/dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[1]) + "/direction";
     } else {
-	directory = "../dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[0]) + string(1,pin[1]) + "/direction";
+	directory = "/dev/gpios/q7_3v3/q7_gpio_3v3_" + string(1,pin[0]) + string(1,pin[1]) + "/direction";
     }
     ifstream myFile;
     myFile.open(directory.c_str());
