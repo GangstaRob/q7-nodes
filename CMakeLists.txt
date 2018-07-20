@@ -72,7 +72,6 @@ include_directories(include
 
 ## Declare a cpp executable
 add_executable(hello src/hello.cpp)
-add_executable(client src/client.cpp)
 
 
 ## Add cmake target dependencies of the executable/library
@@ -80,13 +79,8 @@ add_executable(client src/client.cpp)
 # add_dependencies(example_node example_generate_messages_cpp)
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(hello
-  ${catkin_LIBRARIES}
-)
+target_link_libraries(hello ${catkin_LIBRARIES})
 
-target_link_libraries(client
-  ${catkin_LIBRARIES}
-)
 
 #############
 ## Install ##
@@ -103,7 +97,7 @@ target_link_libraries(client
  )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS hello client
+install(TARGETS hello
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
