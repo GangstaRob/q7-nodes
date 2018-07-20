@@ -72,7 +72,7 @@ include_directories(include
 
 ## Declare a cpp executable
 add_executable(hello src/hello.cpp)
-
+add_executable(time src/Time.h src/Time.cpp src/main.cpp)
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -80,6 +80,7 @@ add_executable(hello src/hello.cpp)
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(hello ${catkin_LIBRARIES})
+target_link_libraries(time ${catkin_LIBRARIES})
 
 
 #############
@@ -97,7 +98,7 @@ target_link_libraries(hello ${catkin_LIBRARIES})
  )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS hello
+install(TARGETS hello time
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
