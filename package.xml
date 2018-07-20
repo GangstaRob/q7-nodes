@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>example_pkg</name>
+  <name>my_pkg</name>
   <version>0.0.1</version>
   <description>The example package</description>
 
