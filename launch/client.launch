@@ -1,0 +1,9 @@
+<launch>
+  <node 
+     pkg="my_pkg"
+     type="client"
+     name="my_client"
+     output="screen"
+     ns="sim"
+  />
+</launch>
