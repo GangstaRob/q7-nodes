@@ -1,0 +1,9 @@
+<launch>
+  <node 
+     pkg="my_pkg"
+     type="SpiTalker"
+     name="my_SpiTalker"
+     output="screen"
+     ns="sim"
+  />
+</launch>
