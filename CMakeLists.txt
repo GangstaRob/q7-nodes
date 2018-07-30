@@ -73,7 +73,6 @@ include_directories(include
 ## Declare a cpp executable
 add_executable(hello src/hello.cpp)
 add_executable(client src/client.cpp)
-add_executable(time src/Time.h src/Time.cpp src/main.cpp)
 add_executable(time src/SpiTalker.h src/Time.cpp src/spi_talker.cpp)
 # add_executable(reactionWheel src/i2cRW.c src/reactionWheel.c src/reactionWheel.h src/slip.c src/i2c-dev.h)
 
@@ -84,7 +83,6 @@ add_executable(time src/SpiTalker.h src/Time.cpp src/spi_talker.cpp)
 ## Specify libraries to link a library or executable target against
 target_link_libraries(hello ${catkin_LIBRARIES})
 target_link_libraries(client ${catkin_LIBRARIES})
-target_link_libraries(time ${catkin_LIBRARIES})
 target_link_libraries(SpiTalker ${catkin_LIBRARIES})
 # target_link_libraries(reactionWheel ${catkin_LIBRARIES})
 
@@ -104,7 +102,7 @@ target_link_libraries(SpiTalker ${catkin_LIBRARIES})
  )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS hello time client SpiTalker
+install(TARGETS hello client SpiTalker
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -121,7 +119,6 @@ install(TARGETS hello time client SpiTalker
 install(FILES
   launch/example.launch
   launch/hello.launch
-  launch/time.launch
   launch/client.launch
   launch/spi_talker.launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
