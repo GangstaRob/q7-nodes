@@ -15,6 +15,7 @@
 #include <iostream>
 #include <stdint.h>
 #include <ros/ros.h>
+#include <sstream>
 using namespace std;
 
 #define Numel(x) sizeof(x)/sizeof(x[0])
@@ -33,6 +34,12 @@ int spiClose();
 static int setTX(__u8 newtx[]);
 static int transfer();
 static void acc(__u8 * bytes);
+
+string convert_int(int n) {
+   stringstream ss;
+   ss << n;
+   return ss.str();
+}
 
 void enableSPImodule(){
         char cmd[50];
@@ -81,7 +88,7 @@ int spiReadWrite(__u8 newtx[]){
 		cout << "ret = " << ret;
 		printf("SPI Write setup failed.\n");
 		spiClose(); 
-		return 0;
+		//return 0;
 	}	
 	
 	ret =ioctl(file,SPI_IOC_WR_BITS_PER_WORD,&bits);
@@ -90,7 +97,7 @@ int spiReadWrite(__u8 newtx[]){
 		cout << "ret = " << ret;
 		printf("SPI Write failed.\n");
 		spiClose(); 
-		return 0;
+		//return 0;
 	}
 
     ret = ioctl(file, SPI_IOC_RD_MODE, &mode);
@@ -99,7 +106,7 @@ int spiReadWrite(__u8 newtx[]){
 	cout << "ret = " << ret;
         printf("SPI Read setup failed.\n");
         spiClose();
-        return 0;
+       // return 0;
     }
 
     ret =ioctl(file,SPI_IOC_RD_BITS_PER_WORD,&bits);
@@ -108,7 +115,7 @@ int spiReadWrite(__u8 newtx[]){
 	cout << "ret = " << ret;
         printf("SPI Read failed.\n");
         spiClose();
-        return 0;
+        //return 0;
     }
 
 	//printf("SPI Write.\n");
@@ -124,7 +131,7 @@ static int setTX(__u8 newtx[]){
 	int i=0;
 	printf("tx: ");
 	for(i;i<Numel(tx);i++){
-		cout << tx[i];
+		cout << convert_int(tx[i]);
 	}
 	printf("\n");
 	return *tx;
