@@ -63,7 +63,6 @@ int spiInit(){ //Opens file and prints default values
 	if(file<0){
 		cout << "file = " << file;
     		printf("Error opening file");
-    		ROS_INFO_STREAM("file = %d\n",file);
     		return 0;
 	}
 	
