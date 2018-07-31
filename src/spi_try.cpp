@@ -9,6 +9,7 @@
 using namespace std;
 
 #define Numel(x) sizeof(x)/sizeof(x[0])
+struct spi_ioc_transfer tr[256];
 
 string convert_int(int n) {
     stringstream ss;
@@ -61,7 +62,6 @@ void SpiWriteRead(int length, const char *device, uint8_t *msg)
     }
     printf("\n");
 
-    struct spi_ioc_transfer tr[256];
     for (int i = 0; i < length; i++) {
         tr[i].tx_buf = (unsigned long)&tx[i];
         tr[i].rx_buf = (unsigned long)&rx[i];
