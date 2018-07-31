@@ -41,7 +41,7 @@ int spiInit(){ //Opens file and prints default values
 	enableSPImodule();
 	file = open(device,O_RDWR);
 	if(file<0){								
-    		printf("Error opening file: %s\n", strerror(errno));
+    		printf("Error opening file");
     		printf("file = %d\n",file);
     		return 0;
 	}
