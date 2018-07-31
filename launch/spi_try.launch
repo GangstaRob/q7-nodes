@@ -1,6 +1,6 @@
 <launch>
   <node 
-     pkg="test_pkg"
+     pkg="my_pkg"
      type="spi_try"
      name="spi_try_launch"
      ns="sim2"
