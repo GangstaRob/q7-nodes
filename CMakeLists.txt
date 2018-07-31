@@ -73,7 +73,7 @@ include_directories(include
 ## Declare a cpp executable
 add_executable(hello src/hello.cpp)
 add_executable(client src/client.cpp)
-add_executable(spi_talker src/spi_talker.c src/spi.c)
+add_executable(spi_talker src/spi_talker.cpp)
 # add_executable(reactionWheel src/i2cRW.c src/reactionWheel.c src/reactionWheel.h src/slip.c src/i2c-dev.h)
 
 ## Add cmake target dependencies of the executable/library
@@ -120,7 +120,7 @@ install(FILES
   launch/example.launch
   launch/hello.launch
   launch/client.launch
-#  launch/spi_talker.launch
+  launch/spi_talker.launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
