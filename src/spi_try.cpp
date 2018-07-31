@@ -1,10 +1,11 @@
+#include <ros/ros.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <ros/ros.h>
 #include <sstream>
 #include <sys/ioctl.h>
 #include <linux/spi/spidev.h>
+#include <fcntl.h>
 using namespace std;
 
 #define Numel(x) sizeof(x)/sizeof(x[0])
