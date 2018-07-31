@@ -5,6 +5,8 @@
 #include <sstream>
 using namespace std;
 
+#define Numel(x) sizeof(x)/sizeof(x[0])
+
 string convert_int(int n) {
     stringstream ss;
     ss << n;
