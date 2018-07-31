@@ -1,7 +1,7 @@
 <launch>
   <node 
      pkg="my_pkg"
-     type="SpiTalker"
+     type="spi_talker"
      name="my_SpiTalker"
      output="screen"
      ns="sim"
