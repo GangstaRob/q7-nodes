@@ -52,7 +52,9 @@ struct spi_ioc_tranfer{
 int spiInit(){ //Opens file and prints default values
 	enableSPImodule();
 	file = open(device,O_RDWR);
-	if(file<0){								
+	cout << "file = " << file;
+	if(file<0){
+		cout << "file = " << file;
     		printf("Error opening file");
     		printf("file = %d\n",file);
     		return 0;
@@ -73,29 +75,37 @@ int spiReadWrite(__u8 newtx[]){
 	setTX(newtx);
 	spiInit();
 	
-	ret = ioctl(file, SPI_IOC_WR_MODE, &mode);	
+	ret = ioctl(file, SPI_IOC_WR_MODE, &mode);
+	cout << "ret = " << ret;
 	if(ret==-1){
+		cout << "ret = " << ret;
 		printf("SPI Write setup failed.\n");
 		spiClose(); 
 		return 0;
 	}	
 	
 	ret =ioctl(file,SPI_IOC_WR_BITS_PER_WORD,&bits);
+	cout << "ret = " << ret;
 	if(ret==-1){
+		cout << "ret = " << ret;
 		printf("SPI Write failed.\n");
 		spiClose(); 
 		return 0;
 	}
 
     ret = ioctl(file, SPI_IOC_RD_MODE, &mode);
+	cout << "ret = " << ret;
     if(ret==-1){
+	cout << "ret = " << ret;
         printf("SPI Read setup failed.\n");
         spiClose();
         return 0;
     }
 
     ret =ioctl(file,SPI_IOC_RD_BITS_PER_WORD,&bits);
+	cout << "ret = " << ret;
     if(ret==-1){
+	cout << "ret = " << ret;
         printf("SPI Read failed.\n");
         spiClose();
         return 0;
@@ -134,7 +144,9 @@ static int transfer(){
 	tr.bits_per_word = bits;
 
 	ret = ioctl(file, SPI_IOC_MESSAGE(1), &tr);
+	cout << "ret = " << ret;
 	if(ret<1){
+	cout << "ret = " << ret;
 		printf("Message send failed. \n\n");
 		return 0;
 	}
