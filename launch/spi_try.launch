@@ -3,6 +3,7 @@
      pkg="my_pkg"
      type="spi_try"
      name="spi_try_launch"
+     output="screen"
      ns="sim2"
   />
 </launch>
