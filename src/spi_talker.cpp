@@ -21,8 +21,7 @@ int main(int argc, char *argv[]){
 	ros::NodeHandle nh;
 	ROS_INFO_STREAM("hello, ROS!");
 
-	__u8 tx[]={(int)strtol(argv[1], NULL, 16), (int)strtol(argv[2], NULL, 16), (int)strtol(argv[3], NULL, 16), (int)strtol(argv[4], NULL, 16)};
-	shellClr();
+	__u8 tx[]={0xE7, 0x00, 0xE7, 0x00};
 
 	spiReadWrite(tx);
 	
