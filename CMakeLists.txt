@@ -73,7 +73,7 @@ include_directories(include
 ## Declare a cpp executable
 add_executable(hello src/hello.cpp)
 add_executable(client src/client.cpp)
-# add_executable(SpiTalker src/spi_talker.cpp)
+add_executable(spi_talker src/spi_talker.cpp)
 # add_executable(reactionWheel src/i2cRW.c src/reactionWheel.c src/reactionWheel.h src/slip.c src/i2c-dev.h)
 
 ## Add cmake target dependencies of the executable/library
@@ -83,7 +83,7 @@ add_executable(client src/client.cpp)
 ## Specify libraries to link a library or executable target against
 target_link_libraries(hello ${catkin_LIBRARIES})
 target_link_libraries(client ${catkin_LIBRARIES})
-# target_link_libraries(SpiTalker ${catkin_LIBRARIES})
+target_link_libraries(spi_talker ${catkin_LIBRARIES})
 # target_link_libraries(reactionWheel ${catkin_LIBRARIES})
 
 
@@ -102,7 +102,7 @@ target_link_libraries(client ${catkin_LIBRARIES})
  )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS hello client
+install(TARGETS hello client spi_talker
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
