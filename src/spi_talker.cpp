@@ -6,7 +6,7 @@
 * write commands.   
 **************************************************/
 #include <ros/ros.h>
-#include "spi.c"
+#include "<spi.c>"
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
