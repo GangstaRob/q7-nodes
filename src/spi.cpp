@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <stdint.h>
-
+#include <ros/ros.h>
 using namespace std;
 
 #define Numel(x) sizeof(x)/sizeof(x[0])
