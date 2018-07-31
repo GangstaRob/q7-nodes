@@ -86,7 +86,7 @@ int spiReadWrite(__u8 newtx[]){
 	if(ret==-1){
 		cout << "ret = " << ret;
 		printf("SPI Write setup failed.\n");
-		spiClose(); 
+		//spiClose(); 
 		//return 0;
 	}	
 	
@@ -95,7 +95,7 @@ int spiReadWrite(__u8 newtx[]){
 	if(ret==-1){
 		cout << "ret = " << ret;
 		printf("SPI Write failed.\n");
-		spiClose(); 
+		//spiClose(); 
 		//return 0;
 	}
 
@@ -104,7 +104,7 @@ int spiReadWrite(__u8 newtx[]){
     if(ret==-1){
 	cout << "ret = " << ret;
         printf("SPI Read setup failed.\n");
-        spiClose();
+        //spiClose();
        // return 0;
     }
 
@@ -113,7 +113,7 @@ int spiReadWrite(__u8 newtx[]){
     if(ret==-1){
 	cout << "ret = " << ret;
         printf("SPI Read failed.\n");
-        spiClose();
+        //spiClose();
         //return 0;
     }
 
@@ -154,7 +154,7 @@ static int transfer(){
 	if(ret<1){
 	cout << "ret = " << ret;
 		printf("Message send failed. \n\n");
-		return 0;
+		//return 0;
 	}
 	
 
