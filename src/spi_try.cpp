@@ -58,7 +58,7 @@ void SpiWriteRead(int length, const char *device, uint8_t *msg)
 
     printf("tx: ");
     for(int i;i<Numel(tx);i++){
-        cout << tx[i];
+        cout << convert_int(tx[i]);
     }
     printf("\n");
 
@@ -71,15 +71,14 @@ void SpiWriteRead(int length, const char *device, uint8_t *msg)
         tr[i].bits_per_word = 8;
     }
     ret = ioctl(fd, SPI_IOC_MESSAGE(length), tr);
-    if (ret < 1)
-    {
+    if (ret < 1) {
         ROS_ERROR("Error read or write - ioctl");
         exit(1);
     }
     int i=0;
     printf("rx: ");
     for(i;i<Numel(rx);i++){
-        cout << rx[i];
+        cout << convert_int(rx[i]);
     }
     printf("\n");
 // Close device
@@ -94,13 +93,14 @@ int main(int argc, char **argv)
     ros::Duration duration(1. / 24.);
 // Length of byte stream
     int length = 2;
+    int count = 10;
     sleep(2);
-    while (ros::ok())
-    {
+    while (ros::ok() && count > 0) {
         unsigned char rightMsg[] = { 0x00, 0x77, 0x00, 0x77, 0x00, 0x77, 0x00 };
         const char *dev0 = "/dev/spidev1.0";
         SpiWriteRead(length, dev0, rightMsg);
         duration.sleep();
+        count--;
     }
     return 0;
 }
