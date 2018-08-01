@@ -49,8 +49,8 @@ void SpiWriteRead(int length, const char *device, uint8_t *msg)
         exit(1);
     }
 
-    unsigned char tx[256];
-    unsigned char rx[256];
+    unsigned char tx[length];
+    unsigned char rx[length];
     for (int i = 0; i < length; i++) {
         tx[i] = 0x00;
         rx[i] = 0x00;
