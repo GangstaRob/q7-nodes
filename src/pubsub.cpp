@@ -4,7 +4,7 @@
 #include <sstream>
 using namespace std;
 
-my_pkg::Command function(my_pkg::Command);
+my_pkg::Command myfunction(my_pkg::Command);
 
 string convert_int(int n) {
     stringstream ss;
@@ -18,7 +18,7 @@ void messageReceived(const my_pkg::Command& input) {
   ROS_INFO_STREAM(std::setprecision(2) << std::fixed << "upper=" << convert_int(input.upper) << "lower=" << convert_int(input.lower));
 
     my_pkg::Command output;
-    output = function(input);
+    output = myfunction(input);
 
     pub.publish(output);
 
@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
   ros::spin();
 }
 
-my_pkg::Command function(my_pkg::Command input) {
+my_pkg::Command myfunction(my_pkg::Command input) {
   my_pkg::Command output;
   output.upper = input.upper - 10;
   output.lower = input.lower - 10;
