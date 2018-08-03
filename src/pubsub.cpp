@@ -4,7 +4,7 @@
 #include <sstream>
 using namespace std;
 
-mypkg::Command function(my_pkg::Command);
+my_pkg::Command function(my_pkg::Command);
 
 string convert_int(int n) {
     stringstream ss;
@@ -35,8 +35,8 @@ int main(int argc, char **argv) {
   ros::spin();
 }
 
-mypkg::Command function(my_pkg::Command input) {
-  mypkg::Command output;
+my_pkg::Command function(my_pkg::Command input) {
+  my_pkg::Command output;
   output.upper = input.upper - 10;
   output.lower = input.lower - 10;
   return output;
