@@ -55,7 +55,7 @@ __u8* SpiWriteRead(int length, const char *device, uint8_t *tx)
         exit(1);
     }
 
-    __u8 rx[length];
+    static __u8 rx[length];
     for (int i = 0; i < length; i++) {
         tx[i] = 0x00;
         rx[i] = 0x00;
@@ -88,6 +88,7 @@ __u8* SpiWriteRead(int length, const char *device, uint8_t *tx)
     printf("\n");
 // Close device
     close(fd);
+    return rx;
 }
 
 void messageReceived(const my_pkg::Command& input) {
@@ -116,7 +117,7 @@ my_pkg::Command myfunction(my_pkg::Command input) {
     unsigned char rightMsg[] = {input.upper, input.lower};
     int length = 2;
     const char *dev0 = "/dev/spidev1.0";
-    __u8 rx[2];
+    __u8* rx;
     rx = SpiWriteRead(length, dev0, rightMsg);
     output.upper = rx[0];
     output.lower = rx[1];
