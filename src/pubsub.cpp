@@ -55,7 +55,7 @@ __u8* SpiWriteRead(int length, const char *device, uint8_t *tx)
         exit(1);
     }
 
-    static __u8 rx[length];
+    static __u8 rx[2];
     for (int i = 0; i < length; i++) {
         tx[i] = 0x00;
         rx[i] = 0x00;
