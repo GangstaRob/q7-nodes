@@ -1,18 +1,18 @@
 <launch>
   <node 
-     pkg="mypkg"
+     pkg="my_pkg"
      type="mysub"
      name="mysub"
      output="screen"
   />
   <node 
-     pkg="mypkg"
+     pkg="my_pkg"
      type="cmdpub"
      name="cmdpub"
      output="screen"
   />
   <node 
-     pkg="mypkg"
+     pkg="my_pkg"
      type="pubsub"
      name="pubsub"
   />
