@@ -75,6 +75,9 @@ add_executable(hello src/hello.cpp)
 add_executable(client src/client.cpp)
 add_executable(spi_talker src/spi_talker.cpp)
 add_executable(spi_try src/spi_try.cpp)
+add_executable(mysub src/mysub.cpp)
+add_executable(pubsub src/pubsub.cpp)
+add_executable(cmdpub src/cmdpub.cpp)
 # add_executable(reactionWheel src/i2cRW.c src/reactionWheel.c src/reactionWheel.h src/slip.c src/i2c-dev.h)
 
 ## Add cmake target dependencies of the executable/library
@@ -86,6 +89,9 @@ target_link_libraries(hello ${catkin_LIBRARIES})
 target_link_libraries(client ${catkin_LIBRARIES})
 target_link_libraries(spi_talker ${catkin_LIBRARIES})
 target_link_libraries(spi_try ${catkin_LIBRARIES})
+target_link_libraries(mysub ${catkin_LIBRARIES})
+target_link_libraries(pubsub ${catkin_LIBRARIES})
+target_link_libraries(cmdpub ${catkin_LIBRARIES})
 # target_link_libraries(reactionWheel ${catkin_LIBRARIES})
 
 
@@ -104,7 +110,7 @@ target_link_libraries(spi_try ${catkin_LIBRARIES})
  )
 
 ## Mark executables and/or libraries for installation
-install(TARGETS hello client spi_talker spi_try
+install(TARGETS hello client spi_talker spi_try mysub pubsub cmdpub
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
@@ -124,6 +130,7 @@ install(FILES
   launch/client.launch
   launch/spi_talker.launch  
   launch/spi_try.launch
+  launch/pubsubtest.launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
 
