@@ -1,5 +1,5 @@
 #include <ros/ros.h>
-#include <my_pkg/Command.h>
+#include "Command.h"
 #include <stdlib.h>
 #include <sstream>
 #include <iostream>
