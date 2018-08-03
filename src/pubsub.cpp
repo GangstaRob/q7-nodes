@@ -1,10 +1,10 @@
 #include <ros/ros.h>
-#include <mypkg/Command.h>
+#include <my_pkg/Command.h>
 #include <iomanip>
 #include <sstream>
 using namespace std;
 
-mypkg::Command function(mypkg::Command); 
+mypkg::Command function(my_pkg::Command);
 
 string convert_int(int n) {
     stringstream ss;
@@ -14,10 +14,10 @@ string convert_int(int n) {
 
 ros::Publisher pub;
 
-void messageReceived(const mypkg::Command& input) {
+void messageReceived(const my_pkg::Command& input) {
   ROS_INFO_STREAM(std::setprecision(2) << std::fixed << "upper=" << convert_int(input.upper) << "lower=" << convert_int(input.lower));
 
-    mypkg::Command output;
+    my_pkg::Command output;
     output = function(input);
 
     pub.publish(output);
@@ -30,12 +30,12 @@ int main(int argc, char **argv) {
   ros::NodeHandle nh;
 
   ros::Subscriber sub = nh.subscribe("my_topic0", 1000, &messageReceived);
-  pub = nh.advertise<mypkg::Command>("my_topic1", 1000);
+  pub = nh.advertise<my_pkg::Command>("my_topic1", 1000);
 
   ros::spin();
 }
 
-mypkg::Command function(mypkg::Command input) {
+mypkg::Command function(my_pkg::Command input) {
   mypkg::Command output;
   output.upper = input.upper - 10;
   output.lower = input.lower - 10;

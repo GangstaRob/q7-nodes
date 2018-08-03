@@ -1,5 +1,5 @@
 #include <ros/ros.h>
-#include <mypkg/Command.h>
+#include <my_pkg/Command.h>
 #include <stdlib.h>
 #include <sstream>
 #include <iostream>
@@ -18,14 +18,14 @@ int main(int argc, char **argv) {
   ros::init(argc, argv, "publisher");
   ros::NodeHandle nh;
 
-  ros::Publisher pub = nh.advertise<mypkg::Command>("my_topic0", 1000);
+  ros::Publisher pub = nh.advertise<my_pkg::Command>("my_topic0", 1000);
 
   ros::Rate rate(2);
   while(ros::ok()) {
 
      string mystr;
      int myint;
-     mypkg::Command msg;
+     my_pkg::Command msg;
      ROS_INFO_STREAM("Upper Command:");
      getline (cin,mystr);
      stringstream(mystr) >> myint;

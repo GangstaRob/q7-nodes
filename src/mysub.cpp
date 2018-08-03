@@ -1,5 +1,5 @@
 #include <ros/ros.h>
-#include <mypkg/Command.h>
+#include <my_pkg/Command.h>
 #include <iomanip>
 #include <sstream>
 using namespace std;
@@ -10,7 +10,7 @@ string convert_int(int n) {
     return ss.str();
 }
 
-void messageReceived(const mypkg::Command& msg) {
+void messageReceived(const my_pkg::Command& msg) {
   ROS_INFO_STREAM(std::setprecision(2) << std::fixed << "upper=" << convert_int(msg.upper) << "lower=" << convert_int(msg.lower));
 }
 
