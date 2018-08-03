@@ -1,0 +1,19 @@
+<launch>
+  <node 
+     pkg="mypkg"
+     type="mysub"
+     name="mysub"
+     output="screen"
+  />
+  <node 
+     pkg="mypkg"
+     type="cmdpub"
+     name="cmdpub"
+     output="screen"
+  />
+  <node 
+     pkg="mypkg"
+     type="pubsub"
+     name="pubsub"
+  />
+</launch>
