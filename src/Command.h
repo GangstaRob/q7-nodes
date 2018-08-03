@@ -16,7 +16,7 @@
 #include <ros/message_operations.h>
 
 
-namespace mypkg
+namespace my_pkg
 {
 template <class ContainerAllocator>
 struct Command_
@@ -49,19 +49,19 @@ struct Command_
 
 }; // struct Command_
 
-typedef ::mypkg::Command_<std::allocator<void> > Command;
+typedef ::my_pkg::Command_<std::allocator<void> > Command;
 
-typedef boost::shared_ptr< ::mypkg::Command > CommandPtr;
-typedef boost::shared_ptr< ::mypkg::Command const> CommandConstPtr;
+typedef boost::shared_ptr< ::my_pkg::Command > CommandPtr;
+typedef boost::shared_ptr< ::my_pkg::Command const> CommandConstPtr;
 
 // constants requiring out of line definition
 
 
 
 template<typename ContainerAllocator>
-std::ostream& operator<<(std::ostream& s, const ::mypkg::Command_<ContainerAllocator> & v)
+std::ostream& operator<<(std::ostream& s, const ::my_pkg::Command_<ContainerAllocator> & v)
 {
-ros::message_operations::Printer< ::mypkg::Command_<ContainerAllocator> >::stream(s, "", v);
+ros::message_operations::Printer< ::my_pkg::Command_<ContainerAllocator> >::stream(s, "", v);
 return s;
 }
 
@@ -83,62 +83,62 @@ namespace message_traits
 
 
 template <class ContainerAllocator>
-struct IsFixedSize< ::mypkg::Command_<ContainerAllocator> >
+struct IsFixedSize< ::my_pkg::Command_<ContainerAllocator> >
   : TrueType
   { };
 
 template <class ContainerAllocator>
-struct IsFixedSize< ::mypkg::Command_<ContainerAllocator> const>
+struct IsFixedSize< ::my_pkg::Command_<ContainerAllocator> const>
   : TrueType
   { };
 
 template <class ContainerAllocator>
-struct IsMessage< ::mypkg::Command_<ContainerAllocator> >
+struct IsMessage< ::my_pkg::Command_<ContainerAllocator> >
   : TrueType
   { };
 
 template <class ContainerAllocator>
-struct IsMessage< ::mypkg::Command_<ContainerAllocator> const>
+struct IsMessage< ::my_pkg::Command_<ContainerAllocator> const>
   : TrueType
   { };
 
 template <class ContainerAllocator>
-struct HasHeader< ::mypkg::Command_<ContainerAllocator> >
+struct HasHeader< ::my_pkg::Command_<ContainerAllocator> >
   : FalseType
   { };
 
 template <class ContainerAllocator>
-struct HasHeader< ::mypkg::Command_<ContainerAllocator> const>
+struct HasHeader< ::my_pkg::Command_<ContainerAllocator> const>
   : FalseType
   { };
 
 
 template<class ContainerAllocator>
-struct MD5Sum< ::mypkg::Command_<ContainerAllocator> >
+struct MD5Sum< ::my_pkg::Command_<ContainerAllocator> >
 {
   static const char* value()
   {
     return "715230e61ae49e8eb5988a0e6ed0c923";
   }
 
-  static const char* value(const ::mypkg::Command_<ContainerAllocator>&) { return value(); }
+  static const char* value(const ::my_pkg::Command_<ContainerAllocator>&) { return value(); }
   static const uint64_t static_value1 = 0x715230e61ae49e8eULL;
   static const uint64_t static_value2 = 0xb5988a0e6ed0c923ULL;
 };
 
 template<class ContainerAllocator>
-struct DataType< ::mypkg::Command_<ContainerAllocator> >
+struct DataType< ::my_pkg::Command_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "mypkg/Command";
+    return "my_pkg/Command";
   }
 
-  static const char* value(const ::mypkg::Command_<ContainerAllocator>&) { return value(); }
+  static const char* value(const ::my_pkg::Command_<ContainerAllocator>&) { return value(); }
 };
 
 template<class ContainerAllocator>
-struct Definition< ::mypkg::Command_<ContainerAllocator> >
+struct Definition< ::my_pkg::Command_<ContainerAllocator> >
 {
   static const char* value()
   {
@@ -178,9 +178,9 @@ namespace message_operations
 {
 
 template<class ContainerAllocator>
-struct Printer< ::mypkg::Command_<ContainerAllocator> >
+struct Printer< ::my_pkg::Command_<ContainerAllocator> >
 {
-  template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::mypkg::Command_<ContainerAllocator>& v)
+  template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::my_pkg::Command_<ContainerAllocator>& v)
   {
     s << indent << "upper: ";
     Printer<int8_t>::stream(s, indent + "  ", v.upper);
