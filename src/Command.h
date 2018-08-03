@@ -44,8 +44,8 @@ struct Command_
 
 
 
-  typedef boost::shared_ptr< ::mypkg::Command_<ContainerAllocator> > Ptr;
-  typedef boost::shared_ptr< ::mypkg::Command_<ContainerAllocator> const> ConstPtr;
+  typedef boost::shared_ptr< ::my_pkg::Command_<ContainerAllocator> > Ptr;
+  typedef boost::shared_ptr< ::my_pkg::Command_<ContainerAllocator> const> ConstPtr;
 
 }; // struct Command_
 
